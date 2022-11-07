@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #fbf2f2;
+}
+
+.panel {
+  display: flex;
+}
+
+.nav {
+  background: #5627da;
+  height: 100vh;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 57px;
+}
+
+.nav__avatar {
+  width: 112px;
+  height: 114px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+}
+
+.nav__list {
+  list-style-type: none;
+  margin-top: 52px;
+}
+
+.nav__items {
+  height: 60px;
+  align-items: center;
+}
+
+.nav__routes {
+  display: flex;
+}
+
+.nav__imaging {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.nav__routes {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  color: #fbf2f2;
+  text-decoration: none;
+}
+
+.board {
+  padding-top: 65px;
+  padding-left: 60px;
+}
+
+.board__header {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 56px;
+  line-height: 84px;
+  color: #5627DA;
+}
+
+.board__body {
+  margin-top: 91px;
+}
+
+
+.board__list {
+  display: flex;
+  list-style-type: none;
+}
+
+.board__items~.board__items {
+  margin-left: 17px;
+}
+
+.board__btn {
+  background: #5627DA;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 33px;
+  color: #FBF2F2;
+  height: 38px;
+  width: 131px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  padding-left: 23px;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+.board__table {
+  margin-top: 33px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 33px;
+  text-align: center;
+  color: #5627DA;
+  width: 800px;
+}
+
+th {
+  border-bottom: 1px solid #5627da;
+}
+
+.teacher__task{
+  width: 160px;
+}

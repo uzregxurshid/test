@@ -1,0 +1,109 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="../css/stylesheet.css" />
+<link rel="stylesheet" href="../css/role.css" />
+<link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+
+<body>
+  <main>
+    <div class="panel">
+      <%- include('includes/teachermenu.ejs') %>
+      <div class="panel__right">
+        <div class="board">
+          <div class="board__header">
+            Groups
+          </div>
+          <div class="board__body">
+            <%- include('includes/teacherbuttons.ejs') %>
+            <table class="board__table">
+              <thead class="board__table--thead">
+                <tr class="board__table--tr">
+                  <th class="board__table--th"><img src="../images/panel/calendar.svg" alt="calendar"></th>
+                  <th class="board__table--th">GroupName</th>
+                  <th class="board__table--th">CourseId</th>
+                  <th class="board__table--th">TeacherId</th>
+                </tr>
+              </thead>
+              <tbody class="board__table--tbody">
+                <% if (groups){ %>
+                  <% groups.map((group)=>{ %>
+                    <tr class="board__table--tr">
+                      <td class="board__table--td"><%=group.id%></td>
+                      <td class="board__table--td"><%=group.groupName%></td>
+                      <td class="board__table--td"><%=group.courseId%></td>
+                      <td class="board__table--td"><%=group.teacherId%></td>
+                      <td class="board__table--td"><%=group.password%></td>
+                    </tr>
+                  <% }) %>
+                  <%}%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button id="submit" type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <script>
+    add.addEventListener("click", e=>{
+      document.querySelector(".modal-title").innerHTML = "Add Task";
+      document.querySelector(".modal-body").innerHTML = `
+      <form action="/teacher/addTask" method="POST">
+        <div class="form-group">
+          <label for="group">Group</label>
+          <select class="form-control" id="selector" name="group">
+            <% groups.map((group)=>{ %>
+              <option value="<%=group.groupName%>"><%=group.groupName%></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Task Name</label>
+          <input type="text" class="form-control" id="taskName" aria-describedby="emailHelp" placeholder="Enter Task Name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Task Description</label>
+          <input name="description" type="text" class="form-control" id="taskDescription" placeholder="Enter Task Description">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Task Deadline</label>
+          <input type="date" class="form-control" id="taskDeadline" placeholder="Enter Task Deadline" name="deadline">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Task Status</label>
+          <input type="text" class="form-control" id="taskStatus" placeholder="Enter Task Status" name="status">
+        </div>
+      </form>
+      `;
+      submit.addEventListener("click", e=>{
+        const form = document.querySelector("form");
+        form.submit();
+      })
+    })
+  </script>
+</body>
+
+</html>

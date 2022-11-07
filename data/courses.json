@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": ".NET Core",
+    "price": "Free",
+    "duration": "1 month"
+  },
+  {
+    "id": "2",
+    "name": "C++ development",
+    "price": "Free",
+    "duration": "1 month"
+  },
+  {
+    "id": 3,
+    "name": "Java Development",
+    "price": "5000$",
+    "duration": "12 month"
+  }
+]

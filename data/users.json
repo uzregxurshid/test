@@ -1,0 +1,55 @@
+[
+  {
+    "id": "1",
+    "name": "Celestial",
+    "password": "Celestial",
+    "role": "admin"
+  },
+  {
+    "id": "2",
+    "name": "John",
+    "password": "John",
+    "role": "student",
+    "groupName": ".NET X"
+  },
+  {
+    "id": "3",
+    "name": "Jamil",
+    "password": "Celestial",
+    "role": "teacher",
+    "profession": ".NET Developer"
+  },
+  {
+    "id": "4",
+    "name": "ZANE",
+    "password": "Celestial",
+    "profession": "C++ developer",
+    "role": "teacher"
+  },
+  {
+    "id": "5",
+    "name": "Jack",
+    "password": "Jack",
+    "role": "student"
+  },
+  {
+    "id": "6",
+    "name": "Jillar",
+    "password": "Celestial",
+    "role": "student",
+    "groupName": "C++ enginering X"
+  },
+  {
+    "id": "7",
+    "name": "Jack",
+    "password": "Jack",
+    "role": "student"
+  },
+  {
+    "id": "8",
+    "name": "Jill",
+    "password": "Celestial",
+    "role": "student",
+    "groupName": "C++ enginering X"
+  }
+]

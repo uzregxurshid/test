@@ -1,0 +1,49 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="../css/stylesheet.css" />
+<link rel="stylesheet" href="../css/role.css" />
+<link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+
+<body>
+  <main>
+    <div class="panel">
+      <%- include('includes/studentmenu.ejs') %>
+      <div class="panel__right">
+        <div class="board">
+          <div class="board__header">
+            My tasks
+          </div>
+          <div class="board__body">
+            <table class="board__table">
+              <thead class="board__table--thead">
+                <tr class="board__table--tr">
+                  <th class="board__table--th"><img src="../images/panel/calendar.svg" alt="calendar"></th>
+                  <th class="board__table--th">Task Name</th>
+                  <th class="board__table--th">Description</th>
+                  <th class="board__table--th">Deadline</th>
+                </tr>
+              </thead>
+              <tbody class="board__table--tbody">
+                <% if (tasks){ %>
+                <% tasks.map((task)=>{ %> 
+                <tr class="board__table--tr">
+                  <td class="board__table--td"><%=task.id%></td>
+                  <td class="board__table--td"><%=task.name%></td>
+                  <td class="board__table--td"><%=task.description%></td>
+                  <td class="board__table--td"><%=task.deadline%></td>
+                </tr>
+                <% }) %>
+                <%}%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Button trigger modal -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="../css/stylesheet.css" />
+<link rel="stylesheet" href="../css/role.css" />
+<link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+
+<body>
+  <main>
+    <div class="panel">
+      <%- include('includes/teachermenu.ejs') %>
+      <div class="panel__right">
+        <div class="board">
+          <div class="board__header">
+            Students
+          </div>
+          <div class="board__body">
+            <table class="board__table">
+              <thead class="board__table--thead">
+                <tr class="board__table--tr">
+                  <th class="board__table--th"><img src="../images/panel/calendar.svg" alt="calendar"></th>
+                  <th class="board__table--th">Name</th>
+                  <th class="board__table--th">Username</th>
+                  <th class="board__table--th">Password</th>
+                  <th class="board__table--th">Group</th>
+                </tr>
+              </thead>
+              <tbody class="board__table--tbody">
+                <% if (students){ %>
+                <% students.map((student)=>{ %>
+                <tr class="board__table--tr">
+                  <td class="board__table--td"><%=student.id%></td>
+                  <td class="board__table--td"><%=student.name%></td>
+                  <td class="board__table--td"><%=student.name%></td>
+                  <td class="board__table--td"><%=student.password%></td>
+                  <%if(student.groupName) {%>
+                  <td class="board__table--td"><%=student.groupName%></td>
+                  <%} %>
+                </tr>
+                <% }) %>
+                <%}%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Button trigger modal -->
+
+
+</body>
+
+</html>
